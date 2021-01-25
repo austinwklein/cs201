@@ -5,6 +5,8 @@
  * 1/25/2021
  */
 
+// Change your program from part 2 so that the box alternates between 2 different characters.
+
 #include <iostream>
 
 using std::cout;
