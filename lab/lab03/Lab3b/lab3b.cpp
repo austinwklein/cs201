@@ -5,6 +5,8 @@
  * 1/25/2021
  */
 
+// Write a C++ program that prints a 60 × 10 box made of some single character, using nested while-loops.
+
 #include <iostream>
 
 using std::cout;
