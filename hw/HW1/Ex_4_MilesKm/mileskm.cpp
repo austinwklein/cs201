@@ -1,3 +1,4 @@
+// Boilerplate
 /*
  * Austin Klein
  * CS 201
@@ -36,14 +37,17 @@ int main() {
     r = round(k);
 
 
-    // Desired program output (If statements check if either m or k is equal to 1 for grammatical reasons
+    // Desired program output
+    // Output for 1 mile
     if (m == 1) {
         cout << m << " mile is equal to " << k << " kilometers." << endl;
     }
     // 'r' implemented as previously commented
+    // Output for 1 kilometer
     else if (r == 1) {
         cout << m << " miles is equal to " << k << " kilometer." << endl;
     }
+    // Output for plural miles and kilometers
     else {
         cout << m << " miles is equal to " << k << " kilometers." << endl;
     }
