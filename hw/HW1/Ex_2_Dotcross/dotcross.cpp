@@ -23,12 +23,61 @@
  */
 
 #include <iostream>
+#include <iomanip>
 
 using std::cout;
 using std::cin;
 using std::endl;
+using std::setprecision;
 
 int main() {
-    std::cout << "Hello, dotcross!" << std::endl;
+
+    // Variables for vector A (x, y, and z)
+    float ax, ay, az;
+    // Variables for vector B (x, y, and z)
+    float bx, by, bz;
+
+    // Vector A user input
+    cout << "Input x, y, and z for vector A: " << endl;
+
+        cout << "Ax:";
+        cin >> setprecision(5) >> ax;
+        cout << "Ay:";
+        cin >> setprecision(5) >> ay;
+        cout << "Az:";
+        cin >> setprecision(5) >> az;
+
+    cout << endl;
+
+    // Vector B user input
+    cout << "Input x, y, and z for vector B: " << endl;
+
+        cout << "Bx:";
+        cin >> setprecision(5) >> bx;
+        cout << "By:";
+        cin >> setprecision(5) >> by;
+        cout << "Bz:";
+        cin >> setprecision(5) >> bz;
+
+    cout << endl;
+
+    // Dot product of A and B
+    float dp = (ax * bx + ay * by + az * bz);
+    cout << "Dot product:" << endl;
+    cout << "   A: (" << ax << ", " << ay << ", " << az << ")" << endl;
+    cout << " * B: (" << bx << ", " << by << ", " << bz << ")" << endl;
+    cout << " = " << dp << endl;
+
+    cout << endl;
+
+    // Cross product of A and B
+    float cx = (ay * bz - az * by);
+    float cy = (az * bx - ax * bz);
+    float cz = (ax * by - ay * bx);
+    cout << "Cross product:" << endl;
+    cout << "   A: (" << ax << ", " << ay << ", " << az << ")" << endl;
+    cout << " * B: (" << bx << ", " <<  by << ", " << bz << ")" << endl;
+    cout << " = C: (" << cx << ", " << cy << ", " << cz << ")" << endl;
+
     return 0;
 }
