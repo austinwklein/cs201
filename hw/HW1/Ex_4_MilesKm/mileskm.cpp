@@ -19,6 +19,30 @@ using std::cin;
 using std::endl;
 
 int main() {
-    std::cout << "Hello, mileskm!" << std::endl;
+
+    // m will be miles, entered by the user in the next part
+    float m;
+
+    // Read in number to be converted
+    cout << "Input a distance in miles as numerical characters :";
+    cin >> m;
+
+    // Conversion
+    float k;
+    k = m * 1.609;
+    cout << k << endl;
+
+
+    // Desired program output (If statements check if either m or k is equal to 1 for grammatical reasons
+    if (m == 1) {
+        cout << m << " mile is equal to " << k << " kilometers." << endl;
+    }
+    else if (k == 1) {
+        cout << m << " miles is equal to " << k << " kilometer." << endl;
+    }
+    else {
+        cout << m << " miles is equal to " << k << " kilometers." << endl;
+    }
+
     return 0;
 }
