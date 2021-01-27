@@ -30,14 +30,18 @@ int main() {
     // Conversion
     float k;
     k = m * 1.609;
-    cout << k << endl;
+
+    // 'r' created to take rounded 'k' value for checking the conditional statement due to 'k' previously causing unexpected rounding behavior
+    int r;
+    r = round(k);
 
 
     // Desired program output (If statements check if either m or k is equal to 1 for grammatical reasons
     if (m == 1) {
         cout << m << " mile is equal to " << k << " kilometers." << endl;
     }
-    else if (k == 1) {
+    // 'r' implemented as previously commented
+    else if (r == 1) {
         cout << m << " miles is equal to " << k << " kilometer." << endl;
     }
     else {
