@@ -14,9 +14,21 @@
 
 using std::cout;
 using std::cin;
+using std::string;
 using std::endl;
 
 int main() {
-    std::cout << "Hello, greatest!" << std::endl;
+    float i;
+    float j;
+    cout << "Input a positive integer: " << endl;
+    cin >> i;
+    cout << 1 % i;
+
+    while((i < 0) && (i % 1 != 0)){
+        cout << "That is not a positive integer. Please try again." << endl;
+        cout << "Please enter a positive integer: " << endl;
+        cin >> i;
+    }
+
     return 0;
 }
