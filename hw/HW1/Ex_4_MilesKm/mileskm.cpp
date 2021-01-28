@@ -34,7 +34,8 @@ int main() {
 
     // 'r' created to take rounded 'k' value for checking the conditional statement due to 'k' previously causing unexpected rounding behavior
     int r;
-    r = round(k);
+    // Effectively rounds to the 1*10^-5 place
+    r = round(k * 100000) / 100000;
 
 
     // Desired program output
