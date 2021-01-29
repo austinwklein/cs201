@@ -25,24 +25,46 @@ int main() {
 
     int n;
 
-    cout << "Input a number :";
+    cout << "Input a single digit number between 1 and 9:";
     cin >> n;
 
-    switch (n%10)
+    cout << endl;
+
+    switch (n)
     {
-        case 2:
-            std::cout << "two";
-            break;
         case 1:
-            std::cout << "one";
+            cout << "one";
+            break;
+        case 2:
+            cout << "two";
             break;
         case 3:
-            std::cout << "BLAH BLAH";
+            cout << "three";
+            break;
+        case 4:
+            cout << "four";
+            break;
+        case 5:
+            cout << "five";
+            break;
+        case 6:
+            cout << "six";
+            break;
+        case 7:
+            cout << "seven";
+            break;
+        case 8:
+            cout << "eight";
+            break;
+        case 9:
+            cout << "nine";
             break;
         default:
-            std::cout << "Something else";
+            cout << "incorrect entry";
             break;
     }
+
+    cout << endl;
 
 
     return 0;
