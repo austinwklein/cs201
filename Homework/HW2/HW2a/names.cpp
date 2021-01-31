@@ -42,7 +42,13 @@ bool DoesNameExist(const string & nameToFind, vector<string> &names) {
     return false;
 }
 
-void PrintNames(const vector<string> &names) {
+void PrintNames(const vector<string> &names){
+    for (int i = 0; i < 10; i++) {
+        cout << names[i] << endl;
+    }
+}
+
+void CountCharacters(const vector<string> &names) {
     int characters = 0;
     // Iterate through each name in the vector
     for (int i = 0; i < 10; i++) {
@@ -77,5 +83,9 @@ int main() {
     // Print out the vector of names
     PrintNames(names);
 
+    // Counts how many total characters are in the vector of names
+    CountCharacters(names);
+
     return 0;
 }
+
