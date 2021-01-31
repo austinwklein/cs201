@@ -29,23 +29,30 @@ using std::string;
 using std::getline;
 using std::vector;
 
-void InputNames(vector<string> &names) {
-    for (int i = 0; i < 10; i++) {
-        string name;
-        cout << "Please enter a name: ";
-        getline(cin, name);
-        names.push_back(name);
-    }
-}
-
-bool DoesNameExist(const string & nameToFind, vector<string> &names) {
-    for (int i = 0; i < 10; i++) {
-        if (names[i] == nameToFind){
-            return true;
+void InputAmount(vector<string> &money) {string designator;
+    for (int i = 0; i < 5; i++) {
+        switch(i){
+            case(0):
+                designator = "pennies";
+                break;
+            case(1):
+                designator = "nickles";
+                break;
+            case(2):
+                designator = "dimes";
+                break;
+            case(3):
+                designator = "quarters";
+                break;
+            case(4):
+                designator = "one dollar coins";
+                break;
         }
-        else continue;
+        string number;
+        cout << "Input the number of " << designator << " you have: " << endl;
+        getline(cin, number);
+        money.push_back(number);
     }
-    return false;
 }
 
 void PrintNames(const vector<string> &names){
@@ -70,27 +77,14 @@ void CountCharacters(const vector<string> &names) {
 
 int main() {
     // Initialize and fill vector with 10 names
-    vector<string> names;
-    InputNames(names);
-
-    // Ask for a name to search for
-    string nameToFind;
-    cout << "Type in a name to search: ";
-    cin >> nameToFind;
-
-    // Search the vector for the name and give the user feedback
-    if (DoesNameExist(nameToFind, names)) {
-        cout << nameToFind << " is on the list." << endl;
-    }
-    else {
-        cout << nameToFind << " was not found." << endl;
-    }
+    vector<string> money;
+    InputAmount(money);
 
     // Print out the vector of names
-    PrintNames(names);
+    //PrintCoins(names);
 
     // Counts how many total characters are in the vector of names
-    CountCharacters(names);
+    //CountCharacters(names);
 
     return 0;
 }
