@@ -23,7 +23,7 @@ using std::string;
 using std::getline;
 using std::vector;
 
-void inputNames(vector<string> &names) {
+void InputNames(vector<string> &names) {
         for (int i = 0; i < 10; i++) {
             string name;
             cout << "Please enter a name: ";
@@ -32,7 +32,17 @@ void inputNames(vector<string> &names) {
         }
 }
 
-void printNames(const vector<string> &names) {
+bool DoesNameExist(const string & nameToFind, vector<string> &names) {
+    for (int i = 0; i < 10; i++) {
+        if (names[i] == nameToFind){
+            return true;
+        }
+        else continue;
+    }
+    return false;
+}
+
+void PrintNames(const vector<string> &names) {
     for (int i = 0; i < 10; i++) {
         cout << names[i] << endl;
     }
@@ -40,9 +50,19 @@ void printNames(const vector<string> &names) {
 
 int main() {
     vector<string> names;
-    inputNames(names);
+    InputNames(names);
 
-    printNames(names);
+    string nameToFind;
+    cout << "Type in a name to search: ";
+    cin >> nameToFind;
+    if (DoesNameExist(nameToFind, names) == true) {
+        cout << nameToFind << " is on the list." << endl;
+    }
+    else {
+        cout << nameToFind << " was not found." << endl;
+    }
+
+    PrintNames(names);
 
     return 0;
 }
