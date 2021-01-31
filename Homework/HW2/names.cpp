@@ -43,25 +43,38 @@ bool DoesNameExist(const string & nameToFind, vector<string> &names) {
 }
 
 void PrintNames(const vector<string> &names) {
+    int characters = 0;
+    // Iterate through each name in the vector
     for (int i = 0; i < 10; i++) {
-        cout << names[i] << endl;
+
+        // Iterate through each letter in the name
+        //   ea letter/  current letter index < total letters in name
+        for (int letter = 0; letter < names[i].length(); letter++) {
+            characters ++;
+        }
     }
+    cout << "The list of names contains " << characters << " characters." << endl;
 }
 
 int main() {
+    // Initialize and fill vector with 10 names
     vector<string> names;
     InputNames(names);
 
+    // Ask for a name to search for
     string nameToFind;
     cout << "Type in a name to search: ";
     cin >> nameToFind;
-    if (DoesNameExist(nameToFind, names) == true) {
+
+    // Search the vector for the name and give the user feedback
+    if (DoesNameExist(nameToFind, names)) {
         cout << nameToFind << " is on the list." << endl;
     }
     else {
         cout << nameToFind << " was not found." << endl;
     }
 
+    // Print out the vector of names
     PrintNames(names);
 
     return 0;
