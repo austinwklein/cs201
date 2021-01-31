@@ -3,12 +3,18 @@
  * Austin Klein
  * CS 201
  * 1/31/2021
- * HW 2
- * names.cpp
+ * HW 2b
+ * money.cpp
  */
 
 // Design
-/* Write a C++ program that uses the std::vector class with a variety of loops.
+/* Write a C++ program that prompts the user to enter some number of pennies, nickles, dimes, quarters,
+ * and one-dollar coins.Each value is separately quarried and then printed out to reflect the quantity of each coin.
+ * Also print out the total amount of money in cents.
+ *
+ * Improvements:
+ * Print grammatically correct for case: 1 coin
+ * Print output in dollars and cents- in correct format. "$xx.xx"
  */
 
 #include <iostream>
