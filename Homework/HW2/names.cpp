@@ -31,5 +31,10 @@ int main() {
         getline(cin, name);
         names.push_back(name);
     }
+
+    for (int i = 0; i < 10; i ++){
+        cout << names[i] << endl;
+    }
+
     return 0;
 }
