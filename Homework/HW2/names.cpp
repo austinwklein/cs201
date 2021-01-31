@@ -30,16 +30,19 @@ void inputNames(vector<string> &names) {
             getline(cin, name);
             names.push_back(name);
         }
-    }
+}
 
+void printNames(const vector<string> &names) {
+    for (int i = 0; i < 10; i++) {
+        cout << names[i] << endl;
+    }
+}
 
 int main() {
     vector<string> names;
     inputNames(names);
 
-    for (int i = 0; i < 10; i ++){
-        cout << names[i] << endl;
-    }
+    printNames(names);
 
     return 0;
 }
