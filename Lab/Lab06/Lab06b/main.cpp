@@ -8,7 +8,9 @@
  */
 
 // Description:
-/* Description from Blackboard
+/* Rewrite your function so that, instead of printing the length of the given string, it prints a line of “#”
+ * characters, where the number of characters is equal to the length of the string. So if your function is
+ * given the string “about”, then it should print “#####”.
  */
 
 #include <iostream>
