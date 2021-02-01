@@ -49,15 +49,15 @@ void InputAmount(vector<string> &money) {string designator;
                 break;
         }
         string number;
-        cout << "Input the number of " << designator << " you have: " << endl;
+        cout << "How many " << designator << " do you have: " << endl;
         getline(cin, number);
         money.push_back(number);
     }
 }
 
-void PrintNames(const vector<string> &names){
-    for (int i = 0; i < 10; i++) {
-        cout << names[i] << endl;
+void PrintAmounts(const vector<string> &money){
+    for (int i = 0; i < 5; i++) {
+        cout << money[i] << endl;
     }
 }
 
@@ -81,7 +81,7 @@ int main() {
     InputAmount(money);
 
     // Print out the vector of names
-    //PrintCoins(names);
+    PrintAmounts(money);
 
     // Counts how many total characters are in the vector of names
     //CountCharacters(names);
