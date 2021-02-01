@@ -45,7 +45,7 @@ void InputAmount(vector<string> &money) {string designator;
                 designator = "quarters";
                 break;
             case(4):
-                designator = "one dollar coins";
+                designator = "one-dollar coins";
                 break;
         }
         string number;
@@ -57,7 +57,45 @@ void InputAmount(vector<string> &money) {string designator;
 
 void PrintAmounts(const vector<string> &money){
     for (int i = 0; i < 5; i++) {
-        cout << money[i] << endl;
+        string designator;
+        if ((int) &money[i] == 1) {
+            switch (i) {
+                case (0):
+                    designator = " penny";
+                    break;
+                case (1):
+                    designator = " nickle";
+                    break;
+                case (2):
+                    designator = " dime";
+                    break;
+                case (3):
+                    designator = " quarter";
+                    break;
+                case (4):
+                    designator = " one-dollar coin";
+                    break;
+            }
+        } else {
+            switch (i) {
+                case (0):
+                    designator = " pennies";
+                    break;
+                case (1):
+                    designator = " nickles";
+                    break;
+                case (2):
+                    designator = " dimes";
+                    break;
+                case (3):
+                    designator = " quarters";
+                    break;
+                case (4):
+                    designator = " one-dollar coins";
+                    break;
+            }
+        }
+        cout << "You have " << money[i] << designator <<endl;
     }
 }
 
