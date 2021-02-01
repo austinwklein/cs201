@@ -8,7 +8,9 @@
  */
 
 // Description:
-/* Description from Blackboard
+/* Write a function that takes a string parameter. The function should print the string and its
+ * length in some neat, understandable manner.Make your function part of a program that calls
+ * the function with various strings of different lengths.
  */
 
 #include <iostream>
@@ -16,6 +18,8 @@
 using std::cout;
 using std::cin;
 using std::endl;
+
+
 
 int main() {
 
