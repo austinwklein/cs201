@@ -20,6 +20,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
 
 using std::cout;
 using std::cin;
@@ -28,7 +29,7 @@ using std::string;
 using std::getline;
 using std::vector;
 
-void InputAmount(vector<int> &money) {string designator;
+void InputAmount(vector<string> &money) {string designator;
     for (int i = 0; i < 5; i++) {
         switch(i){
             case(0):
@@ -49,16 +50,15 @@ void InputAmount(vector<int> &money) {string designator;
         }
         string number;
         cout << "How many " << designator << " do you have: " << endl;
-        //cin >> number;
         getline(cin, number);
-        money.push_back(std::stoi(number));
+        money.push_back(number);
     }
 }
 
-void PrintAmounts(const vector<int> money){
+void PrintAmounts(const vector<string> money){
     for (int i = 0; i < 5; i++) {
         string designator;
-        if (money[i] == 1) {
+        if (money[i].at(0) == '1' && money[i].size() == 1) {
             switch (i) {
                 case (0):
                     designator = " penny";
@@ -99,32 +99,30 @@ void PrintAmounts(const vector<int> money){
     }
 }
 
-void CountMoney(const vector<int> money) {
-    int cents = 0;
-    cents += money[0] * 1;
-    cents += money[1] * 5;
-    cents += money[2] * 10;
-    cents += money[3] * 25;
-    cents += money[4] * 100;
+void CountCharacters(const vector<string> &names) {
+    int characters = 0;
+    // Iterate through each name in the vector
+    for (int i = 0; i < 10; i++) {
 
-    // Convert cents to dollars
-    float dollars = cents;
-    dollars = dollars / 100;
-
-    // Output total value of money
-    cout << "For a grand total of $" << dollars << "." << endl;
+        // Iterate through each letter in the name
+        //   ea letter/  current letter index < total letters in name
+        for (int letter = 0; letter < names[i].length(); letter++) {
+            characters ++;
+        }
+    }
+    cout << "The list of names contains " << characters << " characters." << endl;
 }
 
 int main() {
-    // Initialize and fill vector with number of coins
-    vector<int> money;
+    // Initialize and fill vector with 10 names
+    vector<string> money;
     InputAmount(money);
 
-    // Print out the vector of coins
+    // Print out the vector of names
     PrintAmounts(money);
 
-    // Counts how much the coins are worth
-    CountMoney(money);
+    // Counts how many total characters are in the vector of names
+    //CountCharacters(names);
 
     return 0;
 }
