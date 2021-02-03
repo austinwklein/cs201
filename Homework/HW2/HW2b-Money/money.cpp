@@ -55,10 +55,10 @@ void InputAmount(vector<string> &money) {string designator;
     }
 }
 
-void PrintAmounts(const vector<string> &money){
+void PrintAmounts(const vector<string> money){
     for (int i = 0; i < 5; i++) {
         string designator;
-        if ((int) &money[i] == 1) {
+        if (money[i].at(0) == '1' && money[i].size() == 1) {
             switch (i) {
                 case (0):
                     designator = " penny";
