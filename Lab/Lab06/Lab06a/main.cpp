@@ -18,12 +18,18 @@
 using std::cout;
 using std::cin;
 using std::endl;
+using std::string;
 
-
+void InputString(string &input){
+    cout << "Input your favorite word: ";
+    cin >> input;
+    cout << endl;
+}
 
 int main() {
-
-
-
+    string input;
+    InputString(input);
+    cout << "You printed: " << input << endl;
+    cout << "Your word contains " << input.size() << " characters." << endl;
     return 0;
 }
