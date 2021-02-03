@@ -4,4 +4,4 @@ project(Lab07)
 set(CMAKE_CXX_STANDARD 20)
 
 
-add_executable(Lab07a main.cpp)
+add_executable(Lab07a main.cpp intio.hpp intio.cpp)
