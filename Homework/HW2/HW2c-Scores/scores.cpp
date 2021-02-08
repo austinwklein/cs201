@@ -22,7 +22,7 @@
      * 4) search for a score.
  * For option 1, use the code you wrote to add names until the input 'NoName, 0' is entered.
  * For option 2, print the list of names and scores, one per line.
- * For option 3, when you enter a name, the program should output the corresponding score, of name not found.
+ * For option 3, when you enter a name, the program should output the corresponding score, or name not found.
  * For option 4 when you enter an integer, the program will output all the names with that score, or score not found.
  */
 
@@ -74,6 +74,50 @@ void PrintScores(vector<string> &names, vector<int> &scores) {
     }
 }
 
+void SearchNames(vector<string> &names, vector<int> &scores) {
+    cout << "Type a name and press ENTER to search: ";
+    string name;
+    cin >> name;
+
+    // Formatting
+    cout << endl;
+
+    // Automate the keyword search to run a search through the names vector searching for the name
+    auto search = find(names.begin(), names.end(), name);
+    // If the search comes back with results the index of that name will be applied to the
+    // scores vector to give the corresponding score to the user
+    if (search != names.end()){
+        int index = search - names.begin();
+        cout << name << " has a score of " << scores[index] << endl;
+    }
+    else {
+        cout << name << " was not found" << endl;
+    }
+
+}
+
+void SearchScores(vector<string> &names, vector<int> &scores) {
+    cout << "Type a score and press ENTER to find the players at that score: ";
+    int score;
+    cin >> score;
+
+    // Formatting
+    cout << endl;
+
+    // Automate the keyword search to run a search through the scores vector searching for the score
+    auto search = find(scores.begin(), scores.end(), score);
+    // If the search comes back with results the index of that score will be applied to the
+    // names vector to give the corresponding name to the user
+    if (search != scores.end()){
+        int index = search - scores.begin();
+        cout <<  names[index] <<" has the score of " << score << endl;
+    }
+    else {
+        cout << "No player was found with a score of " << score << endl;
+    }
+
+}
+
 int main() {
     // Initialize vectors to store names and scores at the same indices
     vector<string> names;
@@ -85,7 +129,51 @@ int main() {
     // Formatting
     cout << endl;
 
+    // Function for printing out the two vectors for the user
     PrintScores(names, scores);
+
+
+    // Formatting
+    cout << endl;
+
+    cout << "Enter a number to continue or press enter to quit. " << endl;
+    cout << "       1.  Add names and scores" << endl;
+    cout << "       2.  Print names and scores" << endl;
+    cout << "       3.  Search for a name" << endl;
+    cout << "       4.  Search for a score" << endl;
+
+    int user = 0;
+    cin >> user;
+
+    while (user != 0) {
+        switch (user) {
+            case 1:
+                InputPairs(names, scores);
+                break;
+            case 2:
+                PrintScores(names, scores);
+                break;
+            case 3:
+                SearchNames(names, scores);
+                break;
+            case 4:
+                SearchScores(names, scores);
+                break;
+            //case 0:
+                //break;
+        }
+        cout << endl;
+
+        cout << "Enter a number to continue or press enter to quit. " << endl;
+        cout << "       1.  Add names and scores" << endl;
+        cout << "       2.  Print names and scores" << endl;
+        cout << "       3.  Search for a name" << endl;
+        cout << "       4.  Search for a score" << endl;
+
+        cout << endl;
+        cin >> user;
+    }
+
 
 
 
