@@ -104,8 +104,11 @@ void SearchScores(vector<string> &names, vector<int> &scores) {
     // Formatting
     cout << endl;
 
+    // Set i to the position of the first element of the scores vector
+    // This is to iterate through the starting point of the find function so all occurrences will be found
+    auto i = scores.begin();
     // Automate the keyword search to run a search through the scores vector searching for the score
-    auto search = find(scores.begin(), scores.end(), score);
+    auto search = find(i, scores.end(), score);
     // If the search comes back with results the index of that score will be applied to the
     // names vector to give the corresponding name to the user
     if (search != scores.end()){
