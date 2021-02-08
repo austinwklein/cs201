@@ -36,25 +36,42 @@ using std::endl;
 using std::string;
 using std::getline;
 using std::vector;
+using std:: find;
 
 
 void InputPairs(vector<string> &names, vector<int> &scores) {
-    string name = "";
+    string name;
     int score = 0;
     cout << "Input players name and score separated by a single space: ";
     cin >> name >> score;
     //cout << name << " " << score;
-    while ((name == "NoName" && score == 0) == false) {
-        //cout <<  name << endl;
-        //cout << score;
-        //getline(cin, name);
-        names.push_back(name);
-        scores.push_back(score);
+    while (!(name == "NoName" && score == 0)) {
+
+        if (names.size() == 0) {
+            names.push_back(name);
+            scores.push_back(score);
+        }
+        else {
+            if (find(names.begin(), names.end(), name) != names.end()) {
+                cout << "They are already in the list" << endl;
+            }
+            else {
+                names.push_back(name);
+                scores.push_back(score);
+            }
+        }
+
         cout << "Please enter another name and score separated "
                 "by a space or type 'NoName 0' if all names are added: ";
         cin >> name >> score;
     }
-    return;
+}
+
+
+void PrintScores(vector<string> &names, vector<int> &scores) {
+    for (int i = 0; i < names.size(); i++) {
+        cout << names[i] << " has a score of " << scores[i] << endl;
+    }
 }
 
 int main() {
@@ -68,9 +85,9 @@ int main() {
     // Formatting
     cout << endl;
 
-    for (int i = 0; i < names.size(); i++) {
-        cout << names[i] << " has a score of " << scores[i] << endl;
-    }
+    PrintScores(names, scores);
+
+
 
 
 
