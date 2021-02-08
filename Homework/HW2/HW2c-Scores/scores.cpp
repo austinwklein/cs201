@@ -38,7 +38,39 @@ using std::getline;
 using std::vector;
 
 
+void InputPairs(vector<string> &names, vector<int> &scores) {
+    string name = "";
+    int score = 0;
+    cout << "Input players name and score separated by a single space: ";
+    cin >> name >> score;
+    //cout << name << " " << score;
+    while ((name == "NoName" && score == 0) == false) {
+        //cout <<  name << endl;
+        //cout << score;
+        //getline(cin, name);
+        names.push_back(name);
+        scores.push_back(score);
+        cout << "Please enter another name and score separated "
+                "by a space or type 'NoName 0' if all names are added: ";
+        cin >> name >> score;
+    }
+    return;
+}
+
 int main() {
+    // Initialize vectors to store names and scores at the same indices
+    vector<string> names;
+    vector<int> scores;
+
+    // Function created to read in user input
+    InputPairs(names, scores);
+
+    // Formatting
+    cout << endl;
+
+    for (int i = 0; i < names.size(); i++) {
+        cout << names[i] << " has a score of " << scores[i] << endl;
+    }
 
 
 
