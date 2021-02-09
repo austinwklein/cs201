@@ -47,7 +47,7 @@ void InputPairs(vector<string> &names, vector<int> &scores) {
     //cout << name << " " << score;
     while (!(name == "NoName" && score == 0)) {
 
-        if (names.size() == 0) {
+        if (names.empty()) {
             names.push_back(name);
             scores.push_back(score);
         }
@@ -104,21 +104,30 @@ void SearchScores(vector<string> &names, vector<int> &scores) {
     // Formatting
     cout << endl;
 
-    // Set i to the position of the first element of the scores vector
-    // This is to iterate through the starting point of the find function so all occurrences will be found
-    auto i = scores.begin();
-    // Automate the keyword search to run a search through the scores vector searching for the score
-    auto search = find(i, scores.end(), score);
-    // If the search comes back with results the index of that score will be applied to the
-    // names vector to give the corresponding name to the user
-    if (search != scores.end()){
-        int index = search - scores.begin();
-        cout <<  names[index] <<" has the score of " << score << endl;
-    }
-    else {
-        cout << "No player was found with a score of " << score << endl;
+    // Vector to keep track of indices of matching scores
+    vector<int> index;
+
+    // Creates a new temp vector with all the indices of the scores that match
+    for (int i = 0; i < names.size(); i++) {
+        if (scores[i] == score) {
+            index.push_back(i);
+        }
+        else {
+
+        }
     }
 
+    // If index vector has anything in it, names will be outputted to the console.
+    // If it is empty sizeof will return 0 triggering cout No player found
+    if (!index.empty()) {
+        cout << "The following players have the score of " << score << endl;
+        for (int i = 0; i < index.size(); i++) {
+            cout << names[index[i]] << endl;
+        }
+    }
+    else {
+        cout << "No players were found with a score of " << score << endl;
+    }
 }
 
 int main() {
@@ -162,8 +171,8 @@ int main() {
             case 4:
                 SearchScores(names, scores);
                 break;
-            //case 0:
-                //break;
+            default:
+                break;
         }
         cout << endl;
 
