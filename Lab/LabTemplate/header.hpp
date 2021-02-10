@@ -10,4 +10,15 @@
 #ifndef LAB_HEADER_HPP
 #define LAB_HEADER_HPP
 
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::endl;
+#include <string>
+using std::string;
+
+void function(){
+
+}
+
 #endif //LAB_HEADER_HPP
