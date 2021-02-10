@@ -55,7 +55,7 @@ using std::endl;
 
 int main() {
 
-    for (int i = 0; i <= 40; i++) {
+    for (int i = 1; i <= 40; i++) {
         if (isDiv3(i)){
             cout << i << " is divisible by 3. " << endl;
         }
