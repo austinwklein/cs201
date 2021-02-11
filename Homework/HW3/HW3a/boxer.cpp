@@ -26,7 +26,7 @@ int main() {
     while (loop == 1){
         // Passed by reference for user input
         string word;
-        int number;
+        int number = 0;
 
         // The box can be split into 3 distinct sections from top to bottom.
         // The strings below will track those sections and will pass into
