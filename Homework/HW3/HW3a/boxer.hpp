@@ -19,6 +19,8 @@ using std::string;
 
 void inputInfo(string &word, int &number);
 
-void createBox(string &word, int &number);
+void createBox(string &word, int &number, string & a, string & b, string & c);
+
+void printBox(string & a, string & b, string & c);
 
 #endif //LAB_BOXER_HPP
