@@ -12,18 +12,36 @@
  */
 
 #include <iostream>
+#include <ostream>
+#include <limits>
 #include "boxer.hpp"
 
 using std::cout;
 using std::cin;
 using std::endl;
+using std::getline;
+using std::streamsize;
+using std::numeric_limits;
+using std::flush;
+using std::to_string;
+using std::ws;
 
 void inputInfo(string &word, int &number){
     cout << "Input a string: ";
-    cin >> word;
+    getline(cin >> ws,word);
     cout << "Input number of box perimeters desired: ";
-    cin >> number;
+    cin>>number;
     cout << endl;
+
+    if (number < 1) {
+        // Nesting while loop because the only time it needs to
+        // be used is if the number is less than one
+        while (number < 1){
+            cout << "You must have a minimum of one border. " << endl;
+            cout << "Please try again. " << endl;
+            cin >> number;
+        }
+    }
 }
 
 // Each box has 3 repeating patterns.
