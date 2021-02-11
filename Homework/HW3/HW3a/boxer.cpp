@@ -14,12 +14,27 @@
 #include <iostream>
 #include "boxer.hpp"
 
-
 using std::cout;
 using std::cin;
 using std::endl;
 
 int main() {
+
+    int loop = 1;
+
+    while (loop == 1){
+        string word;
+        int number;
+
+        inputInfo(word, number);
+        createBox(word, number);
+
+        cout << "Press '1' to create a new box, or anything else to EXIT. ";
+        cin >> loop;
+        cout << endl;
+    }
+
+
 
 
 

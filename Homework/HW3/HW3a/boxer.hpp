@@ -17,8 +17,8 @@ using std::endl;
 #include <string>
 using std::string;
 
-void function(){
+void inputInfo(string &word, int &number);
 
-}
+void createBox(string &word, int &number);
 
 #endif //LAB_BOXER_HPP
