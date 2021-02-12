@@ -17,8 +17,8 @@ using std::endl;
 #include <string>
 using std::string;
 
-void function(){
+/*void function(){
 
-}
+}*/
 
 #endif //LAB11_HPP

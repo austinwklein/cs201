@@ -13,6 +13,11 @@
  * prints the characters in the word that are lower-case letters, in
  * the order in which they appear in the word.
  *
+ * A = D 65
+ * Z = D 90
+ * a = D 97
+ * z = D 122
+ *
  * Here, a  word is any sequence of non-space characters.
  * For example, “ 3rq%d$EzZ@[x” counts as a word.
  * If the above word is entered by the user, then the program should
@@ -47,7 +52,20 @@ using std::endl;
 
 int main() {
 
+    /*cout << int(char(122)) << endl;
+    cout << char(int('z')) << endl;*/
 
+    // A
+    cout << char(65) << endl;
+
+    // Z
+    cout << char(90) << endl;
+
+    // a
+    cout << char(97) << endl;
+
+    // z
+    cout << char(122) << endl;
 
     return 0;
 }
