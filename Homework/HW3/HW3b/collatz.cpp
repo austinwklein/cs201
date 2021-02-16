@@ -41,6 +41,7 @@ using std::endl;
 using std::string;
 using std::ws;
 using std::vector;
+using std::to_string;
 
 
 
@@ -48,6 +49,8 @@ using std::vector;
 // **********       Functions             ***************************************
 // ******************************************************************************
 
+// Clears vector since this is a loop based program
+// Intakes user input and checks that it is at least 1, if so -> pushback
 void getNumber(vector<int> & collatz) {
     int firstNumber = 0;
     collatz.clear();
@@ -61,6 +64,9 @@ void getNumber(vector<int> & collatz) {
     collatz.push_back(firstNumber);
 }
 
+// Loop runs if last element is not a 1, if it is the sequence is complete
+// Follows logic of the description at the top
+// Pushes back the result onto the collatz vector
 void processSequence(vector<int> & collatz){
     int temp = collatz.back();
     while (temp != 1) {
@@ -74,8 +80,18 @@ void processSequence(vector<int> & collatz){
     }
 }
 
-//void printSequence();
+// Appends a space followed by each element of the vector
+// onto a string named output. Returns this string to main()
+string printSequence(vector<int> & collatz) {
+    string output = to_string(collatz.front());
+    for (int i = 1; i < collatz.size(); i++) {
+        output += " " + to_string(collatz[i]);
+    }
+    return output;
+}
 
+// When prompted, if user enters '1', the program will re-run
+// any other output ends the program
 bool RunAgain(){
     /* loop = temporary variable for user input to loop the program for additional
      * entry
@@ -96,12 +112,6 @@ bool RunAgain(){
     }
     }
 
-void printVector(vector<int> &vectorName) {
-    for (int i : vectorName) {
-        cout << i << endl;
-    }
-}
-
 
 
 // ******************************************************************************
@@ -109,21 +119,19 @@ void printVector(vector<int> &vectorName) {
 // ******************************************************************************
 
 int main() {
-
     // Variables
         // Stores Collatz sequence
     vector<int> collatz;
-        // Collatz sequence
-    string sequenceOut;
         // While loop controller
     bool runAgain = true;
 
-    // Determines how many times program will run
-        // Program happens entirely in this loop
+    // Program run loop
     while (runAgain) {
         getNumber(collatz);
         processSequence(collatz);
-        printVector(collatz);
+        // printSequence has return type of a string
+        cout << printSequence(collatz) << endl;
+        // Prompts user to enter another number or exit
         runAgain = RunAgain();
     }
 
