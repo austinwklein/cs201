@@ -61,7 +61,18 @@ void getNumber(vector<int> & collatz) {
     collatz.push_back(firstNumber);
 }
 
-//void processSequence(vector<int> & collatz){}
+void processSequence(vector<int> & collatz){
+    int temp = collatz.back();
+    while (temp != 1) {
+        if (temp % 2 == 1) {
+            collatz.push_back(temp * 3 + 1);
+        }
+        else {
+            collatz.push_back(temp / 2);
+        }
+        temp = collatz.back();
+    }
+}
 
 //void printSequence();
 
@@ -111,7 +122,7 @@ int main() {
         // Program happens entirely in this loop
     while (runAgain) {
         getNumber(collatz);
-        //processSequence(collatz);
+        processSequence(collatz);
         printVector(collatz);
         runAgain = RunAgain();
     }
