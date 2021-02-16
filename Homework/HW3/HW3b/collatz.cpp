@@ -33,11 +33,14 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 using std::cout;
 using std::cin;
 using std::endl;
 using std::string;
+using std::ws;
+using std::vector;
 
 
 
@@ -45,11 +48,42 @@ using std::string;
 // **********       Functions             ***************************************
 // ******************************************************************************
 
-//void getNumber();
+void getNumber(int & firstNumber, vector<int> & collatz) {
+    collatz.clear();
+    cout << "Enter a number to see it's collatz sequence: ";
+    cin >> firstNumber;
+    collatz.push_back(firstNumber);
+}
 
 //void processSequence();
 
 //void printSequence();
+
+bool RunAgain(){
+    /* loop = temporary variable for user input to loop the program for additional
+     * entry
+     */
+    string loop;
+
+    cout << "Press '1' to enter another number or press any other key and "
+            "ENTER to QUIT: ";
+
+    // getline used to erase anything left in the stream from the last time through
+    // the loop and then take new input from the user
+    getline(cin >> ws, loop);
+    if (loop == "1") {
+        return true;
+    }
+    else {
+        return false;
+    }
+    }
+
+void printVector(vector<int> &vectorName) {
+    for (int i : vectorName) {
+        cout << i << endl;
+    }
+}
 
 
 
@@ -60,14 +94,21 @@ using std::string;
 int main() {
 
     // Variables
+        // Number input to be processed by sequence
     int firstNumber = 0;
+        // Stores Collatz sequence
+    vector<int> collatz;
+        // Collatz sequence
     string sequenceOut;
+        // While loop controller
     bool runAgain = true;
 
+    // Determines how many times program will run
+        // Program happens entirely in this loop
     while (runAgain) {
-        cout << "Press '1' to enter another number or press any other key and "
-                "ENTER to QUIT: ";
-        cin >> runAgain;
+        getNumber(firstNumber, collatz);
+        printVector(collatz);
+        runAgain = RunAgain();
     }
 
     return 0;
