@@ -48,14 +48,20 @@ using std::vector;
 // **********       Functions             ***************************************
 // ******************************************************************************
 
-void getNumber(int & firstNumber, vector<int> & collatz) {
+void getNumber(vector<int> & collatz) {
+    int firstNumber = 0;
     collatz.clear();
     cout << "Enter a number to see it's collatz sequence: ";
     cin >> firstNumber;
+    while (firstNumber < 1) {
+        cout << "The start of the sequence must be at least 1. " << endl;
+        cout << "Enter a different number to see it's collatz sequence: ";
+        cin >> firstNumber;
+    }
     collatz.push_back(firstNumber);
 }
 
-//void processSequence();
+//void processSequence(vector<int> & collatz){}
 
 //void printSequence();
 
@@ -94,8 +100,6 @@ void printVector(vector<int> &vectorName) {
 int main() {
 
     // Variables
-        // Number input to be processed by sequence
-    int firstNumber = 0;
         // Stores Collatz sequence
     vector<int> collatz;
         // Collatz sequence
@@ -106,7 +110,8 @@ int main() {
     // Determines how many times program will run
         // Program happens entirely in this loop
     while (runAgain) {
-        getNumber(firstNumber, collatz);
+        getNumber(collatz);
+        //processSequence(collatz);
         printVector(collatz);
         runAgain = RunAgain();
     }
