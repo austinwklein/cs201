@@ -29,7 +29,6 @@ using std::cin;
 using std::endl;
 using std::ws;
 using std::string;
-using std::sqrt;
 
 
 
