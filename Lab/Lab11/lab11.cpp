@@ -44,28 +44,29 @@
  */
 
 #include <iostream>
-#include "lab11.hpp"
+#include <string>
 
 using std::cout;
 using std::cin;
 using std::endl;
+using std::getline;
+using std::string;
 
 int main() {
 
-    /*cout << int(char(122)) << endl;
-    cout << char(int('z')) << endl;*/
+    string userInput;
+    string newString;
 
-    // A
-    cout << char(65) << endl;
+    cout << "Input a string: ";
+    getline(cin, userInput);
 
-    // Z
-    cout << char(90) << endl;
+    for (auto n : userInput) {
+        if (96 < int(n) && int(n) < 123) {
+            newString += n;
+        }
+    }
 
-    // a
-    cout << char(97) << endl;
-
-    // z
-    cout << char(122) << endl;
+    cout << newString << endl;
 
     return 0;
 }
