@@ -113,8 +113,8 @@ int main() {
 
     // Welcome: placed outside the loop as it will only be run one time
     cout << endl;
-    cout << "Welcome to the Quadra-Solver 4000: the best quadratic formula calculator "
-            "around! " << endl;
+    cout << "Welcome to the Quadra-Solver 4000: the best quadratic formula "
+            "calculator around! " << endl;
 
     // Program run loop
     while (runAgain) {
