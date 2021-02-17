@@ -8,12 +8,11 @@
  */
 
 // Description:
-/* Description from Blackboard
+/* Print a box around a string with as many '*'s as the user specifies
  */
 
 #include <iostream>
 #include <ostream>
-#include <limits>
 #include "boxer.hpp"
 
 using std::cout;
