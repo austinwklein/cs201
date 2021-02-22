@@ -33,16 +33,16 @@ int main() {
 		std::cout << words[i] << ' ';
 	}
 
-	std::cout << std::endl;
+	/*std::cout << std::endl;
 	std::cout << "----------------------Additional 1----------------------"
 			<< std::endl;
-	// TODO print only words >= 5
+	//  print only words >= 5
 
 	char c = 'x';
 	std::cout << std::endl;
 	std::cout << "----------------------Additional 2----------------------"
 			<< std::endl;
-	// TODO print only words containing char c
+	//  print only words containing char c*/
 
 	return 0;
 }
