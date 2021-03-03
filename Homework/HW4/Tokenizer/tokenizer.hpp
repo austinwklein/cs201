@@ -27,11 +27,15 @@ using std::cin;
 using std::endl;
 #include <string>
 using std::string;
+#include <vector>
+using std::vector;
 
 // ******************************************************************************
 // **********       Functions             ***************************************
 // ******************************************************************************
 
-bool RunAgain();
+bool RunAgain(vector<string> &token);
+
+bool ReadLine(std::string& str);
 
 #endif //HOMEWORK_TOKENIZER_HPP

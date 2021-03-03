@@ -77,17 +77,9 @@
 // **********       Preprocessing         ***************************************
 // ******************************************************************************
 
-#include <iostream>
-#include <string>
 #include "tokenizer.hpp"
 
-
-using std::cout;
-using std::cin;
-using std::endl;
 using std::ws;
-using std::string;
-using std::sqrt;
 
 
 // ******************************************************************************
@@ -100,17 +92,21 @@ int main() {
     ***    Variables     ****
     **********************\*/
     bool runAgain = true;
+    // Stores tokens
+    vector<string> tokens;
+    string word;
 
 
     // Message outside the loop that executes once
     cout << endl;
-    cout << "Welcome! " << endl;
+    cout << R"(Please type in some text. When you are done, type "End", "end" or "END": )" << endl;
 
     // Program run loop
     while (runAgain) {
-
-        // Prompts user to enter another number or exit
-        runAgain = RunAgain();
+        getline(cin >> ws, word);
+        tokens.push_back(word);
+        // checks if the last thing entered to the tokens vector is an end command
+        runAgain = RunAgain(tokens);
     }
 
     return 0;
